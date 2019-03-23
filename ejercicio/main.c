@@ -78,7 +78,7 @@ int main()
         printf("Desea Continuar s/n: ");
         setbuf(stdin,NULL);
         scanf("%c",&respuesta);
-
+        getchar();
     }
 
     promedioTotal=(float)acumuladorTotal/contador;
@@ -94,6 +94,7 @@ int main()
     else
     {
         printf("No se Ingresaron Negativos\n");
+        negativoMaximo=0;
     }
 
     printf("El maximo es: %d\nEl minimo es: %d\nEl menor Positivo: %d\nEl maximo Negativo: %d\n",maximo,minimo,positivoMinimo,negativoMaximo);
