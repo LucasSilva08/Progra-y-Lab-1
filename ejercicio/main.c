@@ -78,7 +78,7 @@ int main()
         printf("Desea Continuar s/n: ");
         setbuf(stdin,NULL);
         scanf("%c",&respuesta);
-        getchar();
+
     }
 
     promedioTotal=(float)acumuladorTotal/contador;
