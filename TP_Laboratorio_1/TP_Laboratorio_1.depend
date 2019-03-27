@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1553701009 source:c:\users\los fierros\desktop\utn\progra-y-lab-1\tp_laboratorio_1\operaciones.c
+	<stdio.h>
+	"Operaciones.h"
+
+1553701009 c:\users\los fierros\desktop\utn\progra-y-lab-1\tp_laboratorio_1\operaciones.h
+
+1553701043 source:c:\users\los fierros\desktop\utn\progra-y-lab-1\tp_laboratorio_1\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1553701058 source:c:\users\los fierros\desktop\utn\progra-y-lab-1\tp_laboratorio_1\operando.c
+	<stdio.h>
+	"Operando.h"
+
+1553701009 c:\users\los fierros\desktop\utn\progra-y-lab-1\tp_laboratorio_1\operando.h
+
