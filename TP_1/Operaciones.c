@@ -1,37 +1,38 @@
+#include <stdio.h>
 #include "Operaciones.h"
 
 
-int calcularSuma(int A, int B)
+float calcularSuma(float A,float B)
 {
-    int resultado;
+    float resultado;
     resultado= A+B;
 
     return resultado;
 }
 
-int calcularResta(int A, int B)
+float calcularResta(float A, float B)
 {
 
-    int resultado;
+    float resultado;
     resultado=A-B;
 
     return resultado;
 }
 
-int calcularMultiplicacion(int A,int B)
+float calcularMultiplicacion(float A,float B)
 {
-    int resultado;
+    float resultado;
     resultado=A*B;
 
     return resultado;
 }
 
-float calcularDivision(int A,int B)
+float calcularDivision(float A,float B)
 {
-    int resultado;
+    float resultado;
     if (B!=0)
     {
-        resultado = (float)A/B;
+        resultado = printf("El resultado de A/B es: %.2f",A/B);
     }
     else
     {
@@ -39,3 +40,19 @@ float calcularDivision(int A,int B)
     }
     return resultado;
 }
+int calcularFactorail(float A)
+{
+    int resultado;
+    if(A ==0|| A==1)
+    {
+        resultado = 1;
+    }
+    else
+    {
+        resultado=(int)A*calcularFactorail((int)A-1);
+    }
+
+    return resultado;
+}
+
+

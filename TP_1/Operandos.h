@@ -1,0 +1,1 @@
+float PedirOperando(char[]);
