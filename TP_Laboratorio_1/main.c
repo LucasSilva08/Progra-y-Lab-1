@@ -71,8 +71,8 @@ int main()
                 printf("Error, Ingrese una Opcion valida\n");
 
         }
-        system("pause");
-        system("cls");
+        //system("pause");
+        //system("cls");
 
 
     }while (seguir=='s');
