@@ -51,6 +51,8 @@ void MostrarMenu(void)
                     suma=calcularSuma(op1,op2);
                     resta=calcularResta(op1,op2);
                     multiplicacion=calcularMultiplicacion(op1,op2);
+                    if (op2!=0)
+                    division= calcularDivision(op1,op2);
 
                     factorialA=calcularFactorail(op1);
                     factorialB=calcularFactorail(op2);
@@ -63,8 +65,18 @@ void MostrarMenu(void)
                 }
                 else
                 {
+
                     printf("El resultado de A+B es: %.2f\nEl resultado de A-B es: %.2f\nEl resultado de A*B es: %.2f\n",suma,resta,multiplicacion);
-                    division=calcularDivision(op1,op2);
+                    if (op2==0)
+                    {
+                        printf("No Se Puede dividir por 0\n");
+                    }
+                    else
+                    {
+                        printf("La Division entre A/B es: %.2f\n",division);
+                    }
+
+
                     printf("El factorial de A es: %d\nEl factorial de B es: %d\n",factorialA,factorialB);
                 }
 
