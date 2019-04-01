@@ -29,6 +29,7 @@ void MostrarMenu(void)
         printf("1. Ingrese el primero Operando\n2. Ingrese Segundo Operando\n3. Calcular todas las Operaciones \n4. Informar Resultado\n5. Salir\n");
         scanf("%d",&opcion);
 
+
         switch(opcion)
         {
             case 1:

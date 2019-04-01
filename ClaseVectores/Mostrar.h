@@ -1,0 +1,1 @@
+void MostrarVector (int [],int);

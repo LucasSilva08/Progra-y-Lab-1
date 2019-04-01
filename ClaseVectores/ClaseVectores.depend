@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1554124001 source:c:\users\alumno\desktop\clasevectores\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Mostrar.h"
+	"Carga.h"
+
+1554124001 c:\users\alumno\desktop\clasevectores\mostrar.h
+
+1554124001 c:\users\alumno\desktop\clasevectores\carga.h
+
+1554124001 source:c:\users\alumno\desktop\clasevectores\carga.c
+	<stdio.h>
+	<stdlib.h>
+	"Carga.h"
+
+1554124709 source:c:\users\alumno\desktop\clasevectores\mostrar.c
+	<stdio.h>
+	<stdlib.h>
+	"Mostrar.h"
+
