@@ -19,3 +19,23 @@
 	<stdlib.h>
 	"Mostrar.h"
 
+1554124709 source:c:\users\alumno\desktop\progra-y-lab-1\clasevectores\mostrar.c
+	<stdio.h>
+	<stdlib.h>
+	"Mostrar.h"
+
+1554124001 c:\users\alumno\desktop\progra-y-lab-1\clasevectores\mostrar.h
+
+1554131165 source:c:\users\alumno\desktop\progra-y-lab-1\clasevectores\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Mostrar.h"
+	"Carga.h"
+
+1554130393 c:\users\alumno\desktop\progra-y-lab-1\clasevectores\carga.h
+
+1554130439 source:c:\users\alumno\desktop\progra-y-lab-1\clasevectores\carga.c
+	<stdio.h>
+	<stdlib.h>
+	"Carga.h"
+

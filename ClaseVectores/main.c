@@ -6,8 +6,17 @@
 int main()
 {
     int numeros[T];
+    int numeroMax;
+    int indice;
+
     CargarVector(numeros,T);
     MostrarVector(numeros,T);
+    numeroMax=buscarMaximo(numeros,T);
+    indice = buscarValor(numeros,T,5);
+
+    printf("El valor esta en: %d",indice);
+
+
 
 
   /* int numeros[5];

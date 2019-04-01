@@ -26,7 +26,7 @@ void MostrarMenu(void)
         {
             printf("A= %.2f\nB= %.2f\n",op1,op2);
         }
-        printf("1. Ingrese el primero Operando\n2. Ingrese Segundo Operando\n3. Calcular todas las Operaciones \n4. Informar Resultado\n5. Salir\n");
+        printf("1. Ingresar 1er Operando\n2. Ingresar 2do Operando\n3. Calcular todas las Operaciones \n4. Informar Resultado\n5. Salir\n");
         scanf("%d",&opcion);
 
 
