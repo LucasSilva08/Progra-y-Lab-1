@@ -30,19 +30,17 @@ float calcularMultiplicacion(float A,float B)
 float calcularDivision(float A,float B)
 {
     float resultado;
-   resultado = A/B;
+    resultado=A/B;
     return resultado;
 }
 int calcularFactorail(float A)
 {
-    int resultado;
-    if(A ==0|| A==1)
+    float resultado=1;
+    float fac;
+
+    for(fac=A;fac>1;fac--)
     {
-        resultado = 1;
-    }
-    else
-    {
-        resultado=(int)A*calcularFactorail((int)A-1);
+        resultado= resultado*fac;
     }
 
     return resultado;

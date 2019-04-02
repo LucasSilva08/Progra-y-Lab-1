@@ -22,13 +22,25 @@ void MostrarMenu(void)
 
     do
     {
-        if (flag1==1&&flag2==1)
+        if (flag1==0)
         {
-            printf("A= %.2f\nB= %.2f\n",op1,op2);
+            printf("1. Ingrear 1er operando A=X\n");
         }
-        printf("1. Ingresar 1er Operando\n2. Ingresar 2do Operando\n3. Calcular todas las Operaciones \n4. Informar Resultado\n5. Salir\n");
-        scanf("%d",&opcion);
+        else
+        {
+            printf("1. Ingresar 1er operando A= %f\n",op1);
+        }
+        if(flag2==0)
+        {
+            printf("2. Ingrear 2do operando B=Y\n");
+        }
+        else
+        {
+            printf("2. Ingrear 2do operando B= %f\n",op2);
+        }
 
+        printf("3. Calcular todas las Operaciones \n4. Informar Resultado\n5. Salir\n");
+        scanf("%d",&opcion);
 
         switch(opcion)
         {
@@ -51,9 +63,10 @@ void MostrarMenu(void)
                     suma=calcularSuma(op1,op2);
                     resta=calcularResta(op1,op2);
                     multiplicacion=calcularMultiplicacion(op1,op2);
-                    if (op2!=0)
-                    division= calcularDivision(op1,op2);
-
+                    if(op2!=0)
+                    {
+                        division=calcularDivision(op1,op2);
+                    }
                     factorialA=calcularFactorail(op1);
                     factorialB=calcularFactorail(op2);
                 }
@@ -65,17 +78,15 @@ void MostrarMenu(void)
                 }
                 else
                 {
-
-                    printf("El resultado de A+B es: %.2f\nEl resultado de A-B es: %.2f\nEl resultado de A*B es: %.2f\n",suma,resta,multiplicacion);
-                    if (op2==0)
+                    printf("El resultado de A+B es: %f\nEl resultado de A-B es: %f\nEl resultado de A*B es: %f\n",suma,resta,multiplicacion);
+                    if (op2!=0)
                     {
-                        printf("No Se Puede dividir por 0\n");
+                        printf("El resultado de A/B es: %f\n",division);
                     }
                     else
                     {
-                        printf("La Division entre A/B es: %.2f\n",division);
+                        printf("No es posible dividir por 0\n");
                     }
-
 
                     printf("El factorial de A es: %d\nEl factorial de B es: %d\n",factorialA,factorialB);
                 }
