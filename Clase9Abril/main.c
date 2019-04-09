@@ -44,6 +44,11 @@ printf("i:%d",i);
     char sexo[T];
     char nombres[T][20];
     int i;
+    int j;
+    int aux;
+    float auxF;
+    char auxS;
+    char auxC[20];
 
     for(i=0;i<T;i++)
     {
@@ -55,6 +60,30 @@ printf("i:%d",i);
         fflush(stdin);
         scanf("%c",&sexo[i]);
         pedirCadena("nombre: ",nombres[i],20);
+    }
+    for (i=0;i<T-1;i++);
+    {
+        for (j=i+1;j<T;j++)
+        {
+            if (legajos[i]>legajos[j])
+            {
+                aux=legajos[i];
+                legajos[i]=legajos[j];
+                legajos[j]=aux;
+
+                auxF=sueldo[i];
+                sueldo[i]=sueldo[j];
+                sueldo[j]=auxF;
+
+                auxS=sexo[i];
+                sexo[i]=sexo[j];
+                sexo[j]=auxS;
+
+                strcpy(auxC,nombres[i]);
+                strcpy(nombres[i],nombres[j]);
+                strcpy(nombres[j],auxC);
+            }
+        }
     }
 
     for(i=0;i<T;i++)
