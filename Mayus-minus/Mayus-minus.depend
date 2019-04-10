@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1554937018 source:/home/lucas/Escritorio/Mayus-minus/main.c
+	<stdio.h>
+	<stdlib.h>
+	"MayMin.h"
+	<string.h>
+
+1554937143 /home/lucas/Escritorio/Mayus-minus/MayMin.h
+
+1554937361 source:/home/lucas/Escritorio/Mayus-minus/MayMin.c
+	<stdio.h>
+	<stdlib.h>
+	"MayMin.h"
+	<string.h>
+
