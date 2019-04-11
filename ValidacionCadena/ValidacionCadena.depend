@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1554937361 source:/home/lucas/Escritorio/ValidacionCadena/MayMin.c
+	<stdio.h>
+	<stdlib.h>
+	"MayMin.h"
+	<string.h>
+
+1554937143 /home/lucas/Escritorio/ValidacionCadena/MayMin.h
+
+1555020319 source:/home/lucas/Escritorio/ValidacionCadena/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"MayMin.h"
+	<ctype.h>
+
