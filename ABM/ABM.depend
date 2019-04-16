@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1555433874 source:c:\users\alumno\desktop\progra-y-lab-1\abm\main.c
+	<stdlib.h>
+	"Empleado.h"
+
+1555438112 c:\users\alumno\desktop\progra-y-lab-1\abm\empleado.h
+	<stdio.h>
+
+1555433171 source:c:\users\alumno\desktop\progra-y-lab-1\abm\empleado.c
+	"Empleado.h"
+	<string.h>
+

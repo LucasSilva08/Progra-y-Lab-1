@@ -24,24 +24,13 @@ void inicializarEmpleados(eEmpleado[],int);
 
 int main()
 {
-
-
-
-
-
     //eEmpleado unEmpleado;//va la esctructura y le asigno un nombre
     //eEmpleado otroEmpleado;
     eEmpleado Lista[T];
-    int indice;
-
     inicializarEmpleados(Lista,T);
-
-
-
-
+    mostarMenu(Lista,T);
    //cargarEmpleado(Lista,T);
    //mostrarTodosLosEmpleados(Lista,T);
-   mostarMenu(Lista,T);
 
 
 
