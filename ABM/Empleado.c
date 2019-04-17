@@ -101,15 +101,19 @@ void hardcodearDatosEmpleados(eEmpleado lista[], int tam)
 int buscarUnEmpleado(eEmpleado lista[],int tam ,int legajo)
 {
     int i;
+
     int indice =-1 ;
     for(i=0;i<tam;i++)
     {
         if(lista[i].legajo==legajo&&lista[i].estado==OCUPADO)
         {
             indice=i;
+
+            break;
         }
 
     }
+
     return indice;
 
 }
