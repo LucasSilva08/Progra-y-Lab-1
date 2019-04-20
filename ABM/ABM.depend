@@ -21,3 +21,22 @@
 	<stdlib.h>
 	"Empleado.h"
 
+1555727192 source:c:\users\los fierros\desktop\progra-y-lab-1-master\abm\empleado.c
+	"PedirDatos.h"
+	"Empleado.h"
+	<string.h>
+
+1555727088 c:\users\los fierros\desktop\progra-y-lab-1-master\abm\empleado.h
+	<stdio.h>
+
+1555610049 source:c:\users\los fierros\desktop\progra-y-lab-1-master\abm\pedirdatos.c
+	<stdio.h>
+
+1555614285 source:c:\users\los fierros\desktop\progra-y-lab-1-master\abm\main.c
+	<stdlib.h>
+	"Empleado.h"
+	"PedirDatos.h"
+	<string.h>
+
+1555610267 c:\users\los fierros\desktop\progra-y-lab-1-master\abm\pedirdatos.h
+

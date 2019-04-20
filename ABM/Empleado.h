@@ -16,9 +16,10 @@ typedef struct
 void mostrarEmpleado(eEmpleado);
 void cargarEmpleado(eEmpleado[], int);
 void mostrarListaEmpleados(eEmpleado[], int);
-
+void BorrarEmpleado(eEmpleado[],int,int);
 int buscarLibre(eEmpleado[], int);
 void inicializarEmpleados(eEmpleado[], int);
 void hardcodearDatosEmpleados(eEmpleado[], int);
 int buscarUnEmpleado(eEmpleado[],int ,int);
-//void ModificarDatos(eEmpleado[],int);
+void ModificarDatos(eEmpleado[],int, int );
+void MenuModificar(eEmpleado[],int);

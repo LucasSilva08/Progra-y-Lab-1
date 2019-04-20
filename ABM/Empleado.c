@@ -1,4 +1,4 @@
-
+#include "PedirDatos.h"
 #include "Empleado.h"
 #include <string.h>
 
@@ -10,19 +10,11 @@ void cargarEmpleado(eEmpleado lista[], int tam)
     i = buscarLibre(lista, tam);
     if(i!=-1)
     {
-        printf("Ingrese legajo: ");
-        scanf("%d", &lista[i].legajo);
-        printf("Ingrese nombre: ");
-        fflush(stdin);
-        gets(lista[i].nombre);
-        printf("Ingrese sexo: ");
-        fflush(stdin);
-        scanf("%c", &lista[i].sexo);
-        printf("Ingrese sueldo bruto: ");
-        scanf("%f", &lista[i].sueldoBruto);
-
+        lista[i].legajo=pedirEntero("Ingrese Nro de Legajo: ");
+        pedirCadena("Ingrese Nombre: ",lista[i].nombre);
+        lista[i].sexo=pedirCaracter("Ingrese Sexo: ");
+        lista[i].sueldoBruto=pedirFlotante("Ingrese Sueldo Bruto: ");
         lista[i].sueldoNeto =lista[i].sueldoBruto*0.85;
-
         lista[i].estado = OCUPADO;
 
     }
@@ -117,6 +109,59 @@ int buscarUnEmpleado(eEmpleado lista[],int tam ,int legajo)
     return indice;
 
 }
+void BorrarEmpleado(eEmpleado lista[],int tam,int legajo)
+{
+    int indice;
 
+    indice=buscarUnEmpleado(lista,tam,legajo);
+    if (indice!=-1)
+    {
+        lista[indice].estado=LIBRE;
+    }
+
+}
+void ModificarDatos(eEmpleado lista [],int tam, int legajo)
+{
+    int indice;
+
+                  indice=buscarUnEmpleado(lista,tam,legajo);
+                  if (indice!=-1)
+                  {
+                      MenuModificar(lista,indice);
+                  }
+                  else
+                  {
+                      printf("No Existe");
+                  }
+}
+void MenuModificar(eEmpleado lista[],int indice)
+{
+    char nombre[20];
+    char sexo;
+    float sueldo;
+    int opcion;
+    do
+    {
+        opcion = pedirEntero("1.Nombre\n2.Sexo\n3.Sueldo Bruto\n4.Salir\nElija una opcion a modificar: ");
+        switch(opcion)
+        {
+            case 1:
+                pedirCadena("Ingrese Nuevo Nombre: ",nombre);
+                strcpy(lista[indice].nombre,nombre);
+            break;
+            case 2:
+                sexo=pedirCaracter("Ingrese Nuevo Sexo: ");
+                lista[indice].sexo=sexo;
+                break;
+            case 3:
+                sueldo=pedirFlotante("Ingrese Nuevo Sueldo Bruto: ");
+                lista[indice].sueldoBruto=sueldo,
+                lista[indice].sueldoNeto=lista[indice].sueldoBruto*0.85;
+                break;
+
+        }
+    }while(opcion!=4);
+
+}
 
 
