@@ -40,3 +40,22 @@
 
 1555610267 c:\users\los fierros\desktop\progra-y-lab-1-master\abm\pedirdatos.h
 
+1555937440 source:c:\users\alumno\desktop\progra-y-lab-1-master\abm\empleado.c
+	"PedirDatos.h"
+	"Empleado.h"
+	<string.h>
+
+1555904906 c:\users\alumno\desktop\progra-y-lab-1-master\abm\pedirdatos.h
+
+1555904906 c:\users\alumno\desktop\progra-y-lab-1-master\abm\empleado.h
+	<stdio.h>
+
+1555940956 source:c:\users\alumno\desktop\progra-y-lab-1-master\abm\main.c
+	<stdlib.h>
+	"Empleado.h"
+	"PedirDatos.h"
+	<string.h>
+
+1555904906 source:c:\users\alumno\desktop\progra-y-lab-1-master\abm\pedirdatos.c
+	<stdio.h>
+
