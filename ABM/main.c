@@ -8,7 +8,6 @@
 float BuscarMayorSueldo(eEmpleado[],int);
 void MostrarMayorSueldo(eEmpleado[],int);
 int contarCarlos(eEmpleado[],int);
-
 int main()
 {
     int opcion;
@@ -38,15 +37,17 @@ int main()
                 mostrarListaEmpleados(lista, T);
                 break;
             case 5:
-                MostrarMayorSueldo(lista,T);
-                printf("La cantidad de carlos es: %d\n",contarCarlos(lista,T));
+                 MostrarMayorSueldo(lista,T);
+                 printf("La cantidad de carlos es: %d\n",contarCarlos(lista,T));
 
                 break;
 
         }
+
     }while(opcion!=6);
     return 0;
 }
+
 float BuscarMayorSueldo(eEmpleado lista[],int tam)
 {
     int i;
@@ -58,11 +59,11 @@ float BuscarMayorSueldo(eEmpleado lista[],int tam)
         if (lista[i].estado==OCUPADO)
         {
            if (lista[i].sueldoBruto>mayorSueldo)
-        {
+          {
             mayorSueldo=lista[i].sueldoBruto;
 
 
-        }
+          }
         }
 
     }
@@ -79,9 +80,9 @@ void MostrarMayorSueldo(eEmpleado lista[],int tam)
        if(lista[i].estado==OCUPADO)
        {
            if(lista[i].sueldoBruto==maximoSueldo)
-       {
+         {
            mostrarEmpleado(lista[i]);
-       }
+         }
        }
 
    }
@@ -105,4 +106,5 @@ int contarCarlos(eEmpleado lista[],int tam)
     }
     return contador;
 }
+
 

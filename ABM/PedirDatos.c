@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 int pedirEntero(char mensaje[])
 {
@@ -27,4 +29,10 @@ char pedirCaracter(char mensaje[])
     fflush(stdin);
     scanf("%c",&letra);
     return letra;
+}
+char getNumeroAleatorio(int desde , int hasta, int iniciar)
+{
+    if(iniciar)
+        srand (time(NULL));
+    return desde + (rand() % (hasta + 1 - desde)) ;
 }

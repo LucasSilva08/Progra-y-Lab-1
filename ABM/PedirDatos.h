@@ -27,3 +27,4 @@ void pedirCadena(char[],char[]);
  *
  */
 char pedirCaracter(char[]);
+char getNumeroAleatorio(int, int, int);

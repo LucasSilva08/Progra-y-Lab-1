@@ -23,3 +23,4 @@ void hardcodearDatosEmpleados(eEmpleado[], int);
 int buscarUnEmpleado(eEmpleado[],int ,int);
 void ModificarDatos(eEmpleado[],int, int );
 void MenuModificar(eEmpleado[],int);
+int getLegajoAleatorio(eEmpleado[],int,int);

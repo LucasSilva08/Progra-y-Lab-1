@@ -1,26 +1,37 @@
 #include "PedirDatos.h"
 #include "Empleado.h"
 #include <string.h>
-
+#include <stdlib.h>
 
 void cargarEmpleado(eEmpleado lista[], int tam)
 {
     int i;
+    int Auxlegajo;
 
     i = buscarLibre(lista, tam);
     if(i!=-1)
     {
-        lista[i].legajo=pedirEntero("Ingrese Nro de Legajo: ");
-        pedirCadena("Ingrese Nombre: ",lista[i].nombre);
-        lista[i].sexo=pedirCaracter("Ingrese Sexo: ");
-        lista[i].sueldoBruto=pedirFlotante("Ingrese Sueldo Bruto: ");
-        lista[i].sueldoNeto =lista[i].sueldoBruto*0.85;
-        lista[i].estado = OCUPADO;
+        Auxlegajo=pedirEntero("Ingrese Nro de Legajo: ");
+        if (buscarUnEmpleado(lista,tam,Auxlegajo)!=-1)
+        {
+            printf("YA EXISTE LEGAJO!!!\n");
+
+        }
+        else
+        {
+            lista[i].legajo=Auxlegajo;
+            pedirCadena("Ingrese Nombre: ",lista[i].nombre);
+            lista[i].sexo=pedirCaracter("Ingrese Sexo: ");
+            lista[i].sueldoBruto=pedirFlotante("Ingrese Sueldo Bruto: ");
+            lista[i].sueldoNeto =lista[i].sueldoBruto*0.85;
+            lista[i].estado = OCUPADO;
+        }
+
 
     }
     else
     {
-        printf("No hay espacio");
+        printf("NO HAY ESPACIO!!\n");
     }
 
 
@@ -112,11 +123,20 @@ int buscarUnEmpleado(eEmpleado lista[],int tam ,int legajo)
 void BorrarEmpleado(eEmpleado lista[],int tam,int legajo)
 {
     int indice;
-
+    char confirmar;
     indice=buscarUnEmpleado(lista,tam,legajo);
     if (indice!=-1)
     {
-        lista[indice].estado=LIBRE;
+        confirmar=pedirCaracter("Estas seguro que desea dar de BAJA? (s/n): ");
+        if (confirmar=='s')
+        {
+            lista[indice].estado=LIBRE;
+        }
+
+    }
+    else
+    {
+        printf("NO SE ENCONTRO!!\n");
     }
 
 }
@@ -131,7 +151,7 @@ void ModificarDatos(eEmpleado lista [],int tam, int legajo)
                   }
                   else
                   {
-                      printf("No Existe");
+                      printf("NO SE ENCONTRO!!!\n");
                   }
 }
 void MenuModificar(eEmpleado lista[],int indice)
@@ -140,26 +160,65 @@ void MenuModificar(eEmpleado lista[],int indice)
     char sexo;
     float sueldo;
     int opcion;
+    char confirmar;
     do
     {
         opcion = pedirEntero("1.Nombre\n2.Sexo\n3.Sueldo Bruto\n4.Salir\nElija una opcion a modificar: ");
         switch(opcion)
         {
             case 1:
-                pedirCadena("Ingrese Nuevo Nombre: ",nombre);
-                strcpy(lista[indice].nombre,nombre);
+                confirmar=pedirCaracter("Estas seguro que desea modificar el NOMBRE? (s/n): ");
+                if(confirmar=='s')
+                {
+                    pedirCadena("Ingrese Nuevo Nombre: ",nombre);
+                    confirmar=pedirCaracter("Estas seguro que desea modificar el NOMBRE? (s/n): ");
+                    if(confirmar=='s')
+                    {
+                        strcpy(lista[indice].nombre,nombre);
+                    }
+                    else
+                    {
+                         break;
+                    }
+                }
             break;
             case 2:
-                sexo=pedirCaracter("Ingrese Nuevo Sexo: ");
-                lista[indice].sexo=sexo;
+                confirmar=pedirCaracter("Estas seguro que desea modificar el SEXO? (s/n): ");
+
+                if (confirmar=='s')
+                {
+                    sexo=pedirCaracter("Ingrese Nuevo Sexo: ");
+                    confirmar=pedirCaracter("Estas seguro que desea modificar el SEXO? (s/n): ");
+                    if (confirmar=='s')
+                    {
+                        lista[indice].sexo=sexo;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
                 break;
             case 3:
-                sueldo=pedirFlotante("Ingrese Nuevo Sueldo Bruto: ");
-                lista[indice].sueldoBruto=sueldo,
-                lista[indice].sueldoNeto=lista[indice].sueldoBruto*0.85;
+                confirmar=pedirCaracter("Estas seguro que desea modificar el SUELDO BRUTO? (s/n): ");
+                if (confirmar=='s')
+                {
+                    sueldo=pedirFlotante("Ingrese Nuevo Sueldo Bruto: ");
+                    confirmar=pedirCaracter("Estas seguro que desea modificar el SUELDO BRUTO? (s/n): ");
+                    if (confirmar=='s')
+                    {
+                        lista[indice].sueldoBruto=sueldo,
+                        lista[indice].sueldoNeto=lista[indice].sueldoBruto*0.85;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
                 break;
-
         }
+
+
     }while(opcion!=4);
 
 }
