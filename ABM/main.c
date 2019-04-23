@@ -5,23 +5,22 @@
 #define T 10
 #include <string.h>
 
-float BuscarMayorSueldo(eEmpleado[],int);
-void MostrarMayorSueldo(eEmpleado[],int);
-int contarCarlos(eEmpleado[],int);
+
 int main()
 {
     int opcion;
     int NroLegajo;
     eEmpleado lista[T];
     inicializarEmpleados(lista,T);
-    hardcodearDatosEmpleados(lista,6);
+    eSector sectores[3] = {{1,"Contabilidad",100},{2,"Sistemas",200},{3, "RRHH", 150}};
+    //hardcodearDatosEmpleados(lista,6);
     do
     {
         opcion = pedirEntero("1.Alta\n2.Baja\n3.Modificar\n4.Mostrar\n5.Informar\n6.Salir\nElija una opcion: ");
         switch(opcion)
         {
             case 1:
-                cargarEmpleado(lista,  T);
+                cargarEmpleado(lista,T,sectores,3);
 
             break;
             case 2:
@@ -34,10 +33,10 @@ int main()
                   ModificarDatos(lista,T,NroLegajo);
                 break;
             case 4:
-                mostrarListaEmpleados(lista, T);
+                mostrarListaEmpleados(lista, T,sectores,3);
                 break;
             case 5:
-                 MostrarMayorSueldo(lista,T);
+                 MostrarMayorSueldo(lista,T,sectores,3);
                  printf("La cantidad de carlos es: %d\n",contarCarlos(lista,T));
 
                 break;
@@ -48,63 +47,6 @@ int main()
     return 0;
 }
 
-float BuscarMayorSueldo(eEmpleado lista[],int tam)
-{
-    int i;
-    int mayorSueldo;
 
-    mayorSueldo=lista[0].sueldoBruto;
-    for (i=0;i<tam;i++)
-    {
-        if (lista[i].estado==OCUPADO)
-        {
-           if (lista[i].sueldoBruto>mayorSueldo)
-          {
-            mayorSueldo=lista[i].sueldoBruto;
-
-
-          }
-        }
-
-    }
-     return mayorSueldo;
-}
-void MostrarMayorSueldo(eEmpleado lista[],int tam)
-{
-   int i;
-
-   float maximoSueldo;
-   maximoSueldo=BuscarMayorSueldo(lista,tam);
-   for(i=0;i<tam;i++)
-   {
-       if(lista[i].estado==OCUPADO)
-       {
-           if(lista[i].sueldoBruto==maximoSueldo)
-         {
-           mostrarEmpleado(lista[i]);
-         }
-       }
-
-   }
-
-
-}
-int contarCarlos(eEmpleado lista[],int tam)
-{
-    int i;
-    int contador=0;
-
-    for(i=0;i<tam;i++)
-    {
-        if (lista[i].estado==OCUPADO)
-        {
-            if(stricmp(lista[i].nombre,"carlos")==0 && lista[i].sueldoBruto>20000)
-            {
-                contador++;
-            }
-        }
-    }
-    return contador;
-}
 
 

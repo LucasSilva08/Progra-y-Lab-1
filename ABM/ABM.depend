@@ -10,16 +10,20 @@
 	"Empleado.h"
 	<string.h>
 
-1555458888 source:c:\users\cum\documents\downloads\progra-y-lab-1-master\abm\empleado.c
+1555979651 source:c:\users\cum\documents\downloads\progra-y-lab-1-master\abm\empleado.c
+	"PedirDatos.h"
 	"Empleado.h"
 	<string.h>
+	<stdlib.h>
 
-1555424104 c:\users\cum\documents\downloads\progra-y-lab-1-master\abm\empleado.h
+1555979231 c:\users\cum\documents\downloads\progra-y-lab-1-master\abm\empleado.h
 	<stdio.h>
 
-1555455622 source:c:\users\cum\documents\downloads\progra-y-lab-1-master\abm\main.c
+1555980446 source:c:\users\cum\documents\downloads\progra-y-lab-1-master\abm\main.c
 	<stdlib.h>
 	"Empleado.h"
+	"PedirDatos.h"
+	<string.h>
 
 1555963652 source:c:\users\los fierros\desktop\progra-y-lab-1-master\abm\empleado.c
 	"PedirDatos.h"
@@ -42,4 +46,11 @@
 	<string.h>
 
 1555784954 c:\users\los fierros\desktop\progra-y-lab-1-master\abm\pedirdatos.h
+
+1555949778 source:c:\users\cum\documents\downloads\progra-y-lab-1-master\abm\pedirdatos.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1555949778 c:\users\cum\documents\downloads\progra-y-lab-1-master\abm\pedirdatos.h
 
