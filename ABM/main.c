@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "Empleado.h"
 #include "PedirDatos.h"
-#define T 10
+#define T 7
 #include <string.h>
 
 
@@ -13,10 +13,10 @@ int main()
     eEmpleado lista[T];
     inicializarEmpleados(lista,T);
     eSector sectores[3] = {{1,"Contabilidad",100},{2,"Sistemas",200},{3, "RRHH", 150}};
-    //hardcodearDatosEmpleados(lista,6);
+    hardcodearDatosEmpleados(lista,4);
     do
     {
-        opcion = pedirEntero("1.Alta\n2.Baja\n3.Modificar\n4.Mostrar\n5.Informar\n6.Salir\nElija una opcion: ");
+        opcion = pedirEntero("1.Alta\n2.Baja\n3.Modificar\n4.Mostrar\n5.Informar\n6.Informar Empleados por Sector\n7.salir\nElija una opcion: ");
         switch(opcion)
         {
             case 1:
@@ -40,10 +40,12 @@ int main()
                  printf("La cantidad de carlos es: %d\n",contarCarlos(lista,T));
 
                 break;
-
+            case 6:
+                mostrarEmpleadosPorSector(sectores,3,lista,T);
+                break;
         }
 
-    }while(opcion!=6);
+    }while(opcion!=7);
     return 0;
 }
 

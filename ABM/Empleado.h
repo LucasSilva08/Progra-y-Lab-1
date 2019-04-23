@@ -2,12 +2,19 @@
 
 #define LIBRE 0
 #define OCUPADO 1
+
 typedef struct
 {
     int idSector;
     char descripcion[20];
     float valor;
 }eSector;
+typedef struct
+{
+    int idSector;
+    int contadorEmp=0;
+    int acumSueldos=0;
+}eSectorAux;
 typedef struct
 {
     int legajo;
@@ -37,3 +44,6 @@ void MostrarMayorSueldo(eEmpleado[],int,eSector[], int );
 int contarCarlos(eEmpleado[],int);
 
 float calcularSueldo(eEmpleado,eSector[],int);
+
+int pedirSector(eSector[],int);
+void mostrarEmpleadosPorSector(eSector[],int ,eEmpleado[],int);

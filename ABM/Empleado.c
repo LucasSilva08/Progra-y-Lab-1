@@ -22,7 +22,7 @@ void cargarEmpleado(eEmpleado lista[], int tam, eSector sectores[],int ts)
             lista[i].legajo=Auxlegajo;
             pedirCadena("Ingrese Nombre: ",lista[i].nombre);
             lista[i].sexo=pedirCaracter("Ingrese Sexo: ");
-            lista[i].idSector=pedirEntero("Ingrese Id de Sector: ");
+            lista[i].idSector=pedirSector(sectores,ts);
             lista[i].cantidadHoras=pedirEntero("Ingrese Cantidad de Hrs Laborales: ");
             lista[i].sueldoBruto=calcularSueldo(lista[i],sectores,ts);
             lista[i].sueldoNeto =lista[i].sueldoBruto*0.85;
@@ -214,7 +214,6 @@ void MenuModificar(eEmpleado lista[],int indice)
                 break;
         }
     }while(opcion!=4);
-
 }
 float BuscarMayorSueldo(eEmpleado lista[],int tam)
 {
@@ -228,8 +227,6 @@ float BuscarMayorSueldo(eEmpleado lista[],int tam)
            if (lista[i].sueldoBruto>mayorSueldo)
           {
             mayorSueldo=lista[i].sueldoBruto;
-
-
           }
         }
     }
@@ -279,10 +276,42 @@ float calcularSueldo(eEmpleado unEmpleado,eSector sectores[],int ts)
             if(unEmpleado.idSector==sectores[i].idSector)
             {
                 sueldo=unEmpleado.cantidadHoras*sectores[i].valor;
+                break;
             }
         }
     }
     return sueldo;
 }
 
-
+int pedirSector(eSector sectores[],int tam)
+{
+    int i;
+    int sector;
+    printf("Ingrese un Sector: \n");
+    for(i=0;i<tam;i++)
+    {
+        printf("%d--%s\n",sectores[i].idSector,sectores[i].descripcion);
+    }
+    scanf("%d",&sector);
+    return sector;
+}
+void mostrarEmpleadosPorSector(eSector sectores [],int ts, eEmpleado lista[],int te)
+{
+    int j;
+    int i;
+    for(i=0;i<ts;i++)
+    {
+        printf("\n%s\n",sectores[i].descripcion);
+        for(j=0;j<te;j++)
+        {
+           if(sectores[i].idSector==lista[j].idSector)
+           {
+               printf("%s\n",lista[j].nombre);
+           }
+        }
+    }
+}
+float totalDeSueldosPorSector(eEmpleados[],int,eSector[],int)
+{
+    eSectorAux Aux[]
+}
