@@ -3,6 +3,7 @@
 #include "Empleado.h"
 #include "PedirDatos.h"
 #define T 7
+#define M 4
 #include <string.h>
 
 
@@ -11,12 +12,17 @@ int main()
     int opcion;
     int NroLegajo;
     eEmpleado lista[T];
+    eSector sectores[M];
+    eSectorAux Auxiliar[M];
     inicializarEmpleados(lista,T);
-    eSector sectores[3] = {{1,"Contabilidad",100},{2,"Sistemas",200},{3, "RRHH", 150}};
-    hardcodearDatosEmpleados(lista,4);
+    inicializarSectores(sectores,3);
+    //eSector sectores[3] = {{1,"Contabilidad",100},{2,"Sistemas",200},{3, "RRHH", 150}};
+    harcodearSectores(sectores,3);
+    hardcodearDatosEmpleados(lista,6);
+
     do
     {
-        opcion = pedirEntero("1.Alta\n2.Baja\n3.Modificar\n4.Mostrar\n5.Informar\n6.Informar Empleados por Sector\n7.salir\nElija una opcion: ");
+        opcion = pedirEntero("1.Alta\n2.Baja\n3.Modificar\n4.Mostrar\n5.Informar\n6.Informar Empleados por Sector\n7.Total Sueldo por sector\n9.salir\nElija una opcion: ");
         switch(opcion)
         {
             case 1:
@@ -43,9 +49,12 @@ int main()
             case 6:
                 mostrarEmpleadosPorSector(sectores,3,lista,T);
                 break;
+            case 7:
+                acumularSueldos(lista,T,sectores,M,Auxiliar,M);
+                break;
         }
 
-    }while(opcion!=7);
+    }while(opcion!=9);
     return 0;
 }
 

@@ -65,3 +65,25 @@
 	<stdlib.h>
 	<time.h>
 
+1556018278 source:c:\users\cum\desktop\turno d\progra-y-lab-1-master\abm\pedirdatos.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1556330829 source:c:\users\cum\desktop\turno d\progra-y-lab-1-master\abm\main.c
+	<stdlib.h>
+	"Empleado.h"
+	"PedirDatos.h"
+	<string.h>
+
+1556330829 c:\users\cum\desktop\turno d\progra-y-lab-1-master\abm\empleado.h
+	<stdio.h>
+
+1556018278 c:\users\cum\desktop\turno d\progra-y-lab-1-master\abm\pedirdatos.h
+
+1556331299 source:c:\users\cum\desktop\turno d\progra-y-lab-1-master\abm\empleado.c
+	"PedirDatos.h"
+	"Empleado.h"
+	<string.h>
+	<stdlib.h>
+

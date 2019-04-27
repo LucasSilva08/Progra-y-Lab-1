@@ -8,12 +8,13 @@ typedef struct
     int idSector;
     char descripcion[20];
     float valor;
+    int estado;
 }eSector;
 typedef struct
 {
     int idSector;
-    int contadorEmp=0;
-    int acumSueldos=0;
+    int contadorEmp;
+    float acumSueldos;
 }eSectorAux;
 typedef struct
 {
@@ -47,3 +48,9 @@ float calcularSueldo(eEmpleado,eSector[],int);
 
 int pedirSector(eSector[],int);
 void mostrarEmpleadosPorSector(eSector[],int ,eEmpleado[],int);
+
+void harcodearSectores(eSector[],int);
+void inicializarSectores(eSector[],int);
+void cargaAuxiliar(eSector[],int,eSectorAux[]);
+void acumularSueldos(eEmpleado[],int,eSector[],int,eSectorAux[],int);
+

@@ -311,7 +311,66 @@ void mostrarEmpleadosPorSector(eSector sectores [],int ts, eEmpleado lista[],int
         }
     }
 }
-float totalDeSueldosPorSector(eEmpleados[],int,eSector[],int)
+void harcodearSectores(eSector sectores[],int ts)
 {
-    eSectorAux Aux[]
+    int i;
+    int idSectores[]={1,2,3};
+    char descripcion[][50]={"Contabilidad","Sistemas","RRHH"};
+    float valor[]={100,200,150};
+
+    for(i=0;i<ts;i++)
+    {
+        sectores[i].idSector=idSectores[i];
+        strcpy(sectores[i].descripcion,descripcion[i]);
+        sectores[i].valor=valor[i];
+        sectores[i].estado=OCUPADO;
+    }
+}
+void inicializarSectores(eSector sectores[],int ts)
+{
+   int i;
+    for(i=0; i<ts; i++)
+    {
+        sectores[i].estado = LIBRE;
+    }
+}
+void cargaAuxiliar(eSector sectores[],int ts,eSectorAux Auxiliar[])
+{
+    int i;
+
+    for(i=0;i<ts;i++)
+    {
+        if(sectores[i].estado==OCUPADO)
+        {
+            Auxiliar[i].idSector=sectores[i].idSector;
+            Auxiliar[i].contadorEmp=0;
+            Auxiliar[i].acumSueldos=0;
+        }
+    }
+}
+void acumularSueldos(eEmpleado lista[],int te,eSector sectores[],int ts,eSectorAux Auxiliar[],int ta)
+{
+    int i;
+    int j;
+
+    cargaAuxiliar(sectores,ts,Auxiliar);
+    for(i=0;i<ta;i++)
+    {
+        for (j=0;j<te;j++)
+        {
+            if(Auxiliar[i].idSector==lista[j].idSector)
+            {
+                Auxiliar[i].acumSueldos=lista[j].sueldoBruto;
+            }
+        }
+    }
+
+    for(i=0;i<ts;i++)
+    {
+        if(sectores[i].idSector==Auxiliar[i].idSector&&sectores[i].estado==OCUPADO)
+        {
+            printf("%s: %f\n",sectores[i].descripcion,Auxiliar[i].acumSueldos);
+        }
+    }
+
 }
