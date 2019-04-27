@@ -29,13 +29,13 @@
 	"PedirDatos.h"
 	<string.h>
 
-1556338420 source:c:\users\los fierros\desktop\progra-y-lab-1-master\abm\empleado.c
+1556382380 source:c:\users\los fierros\desktop\progra-y-lab-1-master\abm\empleado.c
 	"PedirDatos.h"
 	"Empleado.h"
 	<string.h>
 	<stdlib.h>
 
-1556338410 c:\users\los fierros\desktop\progra-y-lab-1-master\abm\empleado.h
+1556380688 c:\users\los fierros\desktop\progra-y-lab-1-master\abm\empleado.h
 	<stdio.h>
 
 1556317346 source:c:\users\los fierros\desktop\progra-y-lab-1-master\abm\pedirdatos.c
@@ -43,7 +43,7 @@
 	<stdlib.h>
 	<time.h>
 
-1556338410 source:c:\users\los fierros\desktop\progra-y-lab-1-master\abm\main.c
+1556382506 source:c:\users\los fierros\desktop\progra-y-lab-1-master\abm\main.c
 	<stdlib.h>
 	"Empleado.h"
 	"PedirDatos.h"

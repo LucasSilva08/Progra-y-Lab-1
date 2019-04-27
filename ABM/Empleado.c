@@ -358,7 +358,7 @@ void acumularSueldos(eEmpleado lista[],int te,eSector sectores[],int ts,eSectorA
     {
         for (j=0;j<te;j++)
         {
-            if(Auxiliar[i].idSector==lista[j].idSector)
+            if(Auxiliar[i].idSector==lista[j].idSector&&lista[j].estado==OCUPADO)
             {
                 Auxiliar[i].acumSueldos=Auxiliar[i].acumSueldos+lista[j].sueldoBruto;
                 Auxiliar[i].contadorEmp++;
@@ -377,14 +377,32 @@ void MostrarSectorConMayorSueldo(eSector sectores[],int ts,eSectorAux Auxiliar[]
         }
     }
 }
-void MostrarCantidadDeEmpleados(eSector sectores[],int ts,eSectorAux Auxiliar[])
+int BuscarMaximoEmpleados(eSectorAux Auxiliar[],int ts)
 {
-    int i;
+   int i;
+   int max;
+   int flag=0;
+
+   for(i=0;i<ts;i++)
+   {
+       if(flag==0||Auxiliar[i].contadorEmp>max)
+       {
+           max=Auxiliar[i].contadorEmp;
+           flag=1;
+       }
+   }
+   return max;
+}
+void MostrarSectorConMasEmpleados(eSector sectores[],int ts,eSectorAux Auxiliar[])
+{
+     int i;
+     int max;
+     max=BuscarMaximoEmpleados(Auxiliar,ts);
      for(i=0;i<ts;i++)
     {
-        if(sectores[i].idSector==Auxiliar[i].idSector&&sectores[i].estado==OCUPADO)
+        if(sectores[i].idSector==Auxiliar[i].idSector&&Auxiliar[i].contadorEmp==max)
         {
-            printf("%s: %d\n",sectores[i].descripcion,Auxiliar[i].contadorEmp);
+            printf("%s: %d\n",sectores[i].descripcion,max);
         }
     }
 }

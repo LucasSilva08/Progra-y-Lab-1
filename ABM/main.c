@@ -3,7 +3,7 @@
 #include "Empleado.h"
 #include "PedirDatos.h"
 #define T 7
-#define M 4
+#define M 3
 #include <string.h>
 
 
@@ -18,7 +18,7 @@ int main()
     inicializarSectores(sectores,3);
     //eSector sectores[3] = {{1,"Contabilidad",100},{2,"Sistemas",200},{3, "RRHH", 150}};
     harcodearSectores(sectores,3);
-    hardcodearDatosEmpleados(lista,5);
+    hardcodearDatosEmpleados(lista,6);
 
     do
     {
@@ -52,11 +52,11 @@ int main()
             case 7:
                 acumularSueldos(lista,T,sectores,M,Auxiliar,M);
                 MostrarSectorConMayorSueldo(sectores,M,Auxiliar);
-                MostrarCantidadDeEmpleados(sectores,M,Auxiliar);
+
                 break;
             case 8:
                 acumularSueldos(lista,T,sectores,M,Auxiliar,M);
-                MostrarCantidadDeEmpleados(sectores,M,Auxiliar);
+                MostrarSectorConMasEmpleados(sectores,M,Auxiliar);
                 break;
         }
 
