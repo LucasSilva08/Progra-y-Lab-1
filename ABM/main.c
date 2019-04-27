@@ -18,11 +18,11 @@ int main()
     inicializarSectores(sectores,3);
     //eSector sectores[3] = {{1,"Contabilidad",100},{2,"Sistemas",200},{3, "RRHH", 150}};
     harcodearSectores(sectores,3);
-    hardcodearDatosEmpleados(lista,6);
+    hardcodearDatosEmpleados(lista,5);
 
     do
     {
-        opcion = pedirEntero("1.Alta\n2.Baja\n3.Modificar\n4.Mostrar\n5.Informar\n6.Informar Empleados por Sector\n7.Total Sueldo por sector\n9.salir\nElija una opcion: ");
+        opcion = pedirEntero("1.Alta\n2.Baja\n3.Modificar\n4.Mostrar\n5.Informar\n6.Informar Empleados por Sector\n7.Total Sueldo por sector\n8.Cantidad de empleados pos sector\n9.salir\nElija una opcion: ");
         switch(opcion)
         {
             case 1:
@@ -51,6 +51,12 @@ int main()
                 break;
             case 7:
                 acumularSueldos(lista,T,sectores,M,Auxiliar,M);
+                MostrarSectorConMayorSueldo(sectores,M,Auxiliar);
+                MostrarCantidadDeEmpleados(sectores,M,Auxiliar);
+                break;
+            case 8:
+                acumularSueldos(lista,T,sectores,M,Auxiliar,M);
+                MostrarCantidadDeEmpleados(sectores,M,Auxiliar);
                 break;
         }
 

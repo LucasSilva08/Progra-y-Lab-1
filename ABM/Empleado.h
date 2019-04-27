@@ -53,4 +53,5 @@ void harcodearSectores(eSector[],int);
 void inicializarSectores(eSector[],int);
 void cargaAuxiliar(eSector[],int,eSectorAux[]);
 void acumularSueldos(eEmpleado[],int,eSector[],int,eSectorAux[],int);
-
+void MostrarSectorConMayorSueldo(eSector[],int,eSectorAux[]);
+void MostrarCantidadDeEmpleados(eSector[],int,eSectorAux[]);

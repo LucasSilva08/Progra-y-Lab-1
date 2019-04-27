@@ -360,17 +360,34 @@ void acumularSueldos(eEmpleado lista[],int te,eSector sectores[],int ts,eSectorA
         {
             if(Auxiliar[i].idSector==lista[j].idSector)
             {
-                Auxiliar[i].acumSueldos=lista[j].sueldoBruto;
+                Auxiliar[i].acumSueldos=Auxiliar[i].acumSueldos+lista[j].sueldoBruto;
+                Auxiliar[i].contadorEmp++;
             }
         }
     }
-
-    for(i=0;i<ts;i++)
+}
+void MostrarSectorConMayorSueldo(eSector sectores[],int ts,eSectorAux Auxiliar[])
+{
+     int i;
+     for(i=0;i<ts;i++)
     {
         if(sectores[i].idSector==Auxiliar[i].idSector&&sectores[i].estado==OCUPADO)
         {
             printf("%s: %f\n",sectores[i].descripcion,Auxiliar[i].acumSueldos);
         }
     }
-
 }
+void MostrarCantidadDeEmpleados(eSector sectores[],int ts,eSectorAux Auxiliar[])
+{
+    int i;
+     for(i=0;i<ts;i++)
+    {
+        if(sectores[i].idSector==Auxiliar[i].idSector&&sectores[i].estado==OCUPADO)
+        {
+            printf("%s: %d\n",sectores[i].descripcion,Auxiliar[i].contadorEmp);
+        }
+    }
+}
+
+
+
