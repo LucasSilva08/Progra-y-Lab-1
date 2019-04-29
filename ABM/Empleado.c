@@ -6,20 +6,10 @@
 void cargarEmpleado(eEmpleado lista[], int tam, eSector sectores[],int ts)
 {
     int i;
-    int Auxlegajo;
-
     i = buscarLibre(lista, tam);
     if(i!=-1)
     {
-        Auxlegajo=pedirEntero("Ingrese Nro de Legajo: ");
-        if (buscarUnEmpleado(lista,tam,Auxlegajo)!=-1)
-        {
-            printf("YA EXISTE LEGAJO!!!\n");
-
-        }
-        else
-        {
-            lista[i].legajo=Auxlegajo;
+            lista[i].legajo=legajoAlatorio(lista,tam);
             pedirCadena("Ingrese Nombre: ",lista[i].nombre);
             lista[i].sexo=pedirCaracter("Ingrese Sexo: ");
             lista[i].idSector=pedirSector(sectores,ts);
@@ -27,12 +17,21 @@ void cargarEmpleado(eEmpleado lista[], int tam, eSector sectores[],int ts)
             lista[i].sueldoBruto=calcularSueldo(lista[i],sectores,ts);
             lista[i].sueldoNeto =lista[i].sueldoBruto*0.85;
             lista[i].estado = OCUPADO;
-        }
     }
     else
     {
         printf("NO HAY ESPACIO!!\n");
     }
+}
+int legajoAlatorio(eEmpleado lista[],int tam)
+{
+    int legajo;
+    legajo=getNumeroAleatorio(1,7,1);
+    while(buscarUnEmpleado(lista,tam,legajo)!=-1)
+    {
+        legajo=getNumeroAleatorio(1,7,1);
+    }
+    return legajo;
 }
 
 void mostrarListaEmpleados(eEmpleado lista[], int tam,eSector sectores[], int ts)
@@ -301,12 +300,12 @@ void mostrarEmpleadosPorSector(eSector sectores [],int ts, eEmpleado lista[],int
     int i;
     for(i=0;i<ts;i++)
     {
-        printf("\n%s\n",sectores[i].descripcion);
+        printf("\n%s: \n",sectores[i].descripcion);
         for(j=0;j<te;j++)
         {
            if(sectores[i].idSector==lista[j].idSector)
            {
-               printf("%s\n",lista[j].nombre);
+               mostrarEmpleado(lista[j],sectores,ts);
            }
         }
     }
@@ -402,7 +401,7 @@ void MostrarSectorConMasEmpleados(eSector sectores[],int ts,eSectorAux Auxiliar[
     {
         if(sectores[i].idSector==Auxiliar[i].idSector&&Auxiliar[i].contadorEmp==max)
         {
-            printf("%s: %d\n",sectores[i].descripcion,max);
+            printf("Sector: %s\n",sectores[i].descripcion);
         }
     }
 }

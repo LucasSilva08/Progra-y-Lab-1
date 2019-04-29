@@ -56,3 +56,5 @@ void acumularSueldos(eEmpleado[],int,eSector[],int,eSectorAux[],int);
 void MostrarSectorConMayorSueldo(eSector[],int,eSectorAux[]);
 void MostrarSectorConMasEmpleados(eSector[],int,eSectorAux[]);
 int BuscarMaximoEmpleados(eSectorAux[],int);
+
+int legajoAlatorio(eEmpleado[],int);

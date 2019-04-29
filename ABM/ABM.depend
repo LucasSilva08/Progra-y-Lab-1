@@ -87,3 +87,25 @@
 	<string.h>
 	<stdlib.h>
 
+1556541778 source:c:\users\alumno\desktop\progra-y-lab-1-master\abm\empleado.c
+	"PedirDatos.h"
+	"Empleado.h"
+	<string.h>
+	<stdlib.h>
+
+1556383180 c:\users\alumno\desktop\progra-y-lab-1-master\abm\pedirdatos.h
+
+1556543730 c:\users\alumno\desktop\progra-y-lab-1-master\abm\empleado.h
+	<stdio.h>
+
+1556541814 source:c:\users\alumno\desktop\progra-y-lab-1-master\abm\main.c
+	<stdlib.h>
+	"Empleado.h"
+	"PedirDatos.h"
+	<string.h>
+
+1556383180 source:c:\users\alumno\desktop\progra-y-lab-1-master\abm\pedirdatos.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
