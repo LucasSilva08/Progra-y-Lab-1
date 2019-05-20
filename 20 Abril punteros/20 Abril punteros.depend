@@ -1,5 +1,6 @@
 # depslib dependency file v1.0
-1558357303 source:c:\users\alumno\desktop\progra-y-lab-1\20 abril punteros\main.c
+1558360721 source:c:\users\alumno\desktop\progra-y-lab-1\20 abril punteros\main.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 
