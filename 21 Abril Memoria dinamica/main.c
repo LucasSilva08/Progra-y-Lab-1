@@ -1,23 +1,41 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define T 5
 
 int main()
 {
     int* pNumero;
+    int* pAuxiliar;
     int i;
-     pNumero = (int*)malloc(sizeof(int)*5);
+     pNumero = (int*)malloc(sizeof(int)*T);
      if(pNumero!=NULL)
      {
-         for(i=0;i<5;i++)
+         for(i=0;i<T;i++)
          {
              printf("Ingrese un Numero: ");
              scanf("%d",pNumero+i);
          }
-         for(i=0;i<5;i++)
+         for(i=0;i<T;i++)
          {
              printf("%d\n",*(pNumero+i));
          }
      }
+    pAuxiliar=(int*)realloc(pNumero,sizeof(int)*(T+5));
+     if (pAuxiliar!=NULL)
+     {
+         pNumero=pAuxiliar;
+         for(i=T;i<T+5;i++)
+         {
+             printf("Ingrese un Numero: ");
+             scanf("%d",pNumero+i);
+         }
+         for(i=0;i<T+5;i++)
+         {
+             printf("%d\n",*(pNumero+i));
+         }
+
+     }
+
 
     return 0;
 }
