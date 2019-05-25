@@ -2,32 +2,33 @@
 #include <stdlib.h>
 #include "MayMin.h"
 #include <string.h>
+#include <ctype.h>
 
-void pasarMayuscula(char cadena [])
+void pasarMayuscula(char* cadena )
 {
     int i=0;
     do
     {
-        if (cadena[i]!=' ')
+        if (*(cadena+i)!=' ')
         {
-            cadena[i]=toupper(cadena[i]);
+            *(cadena+i)=toupper(*(cadena+i));
 
         }
 
       i++;
-    }while (cadena[i]!='\0');
+    }while (*(cadena+i)!='\0');
 }
-void pasarMinuscula(char cadena [])
+void pasarMinuscula(char* cadena)
 {
     int i=0;
     do
     {
-        if (cadena[i]!=' ')
+        if (*(cadena+i)!=' ')
         {
-            cadena[i]=tolower(cadena[i]);
+            *(cadena+i)=tolower(*(cadena+i));
 
         }
       i++;
 
-    }while (cadena[i]!='\0');
+    }while (*(cadena+i)!='\0');
 }

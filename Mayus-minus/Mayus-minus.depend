@@ -13,3 +13,18 @@
 	"MayMin.h"
 	<string.h>
 
+1558564868 source:/home/lucas/Progra-y-Lab-1/Mayus-minus/main.c
+	<stdio.h>
+	<stdlib.h>
+	"MayMin.h"
+	<string.h>
+
+1558800787 /home/lucas/Progra-y-Lab-1/Mayus-minus/MayMin.h
+
+1558801365 source:/home/lucas/Progra-y-Lab-1/Mayus-minus/MayMin.c
+	<stdio.h>
+	<stdlib.h>
+	"MayMin.h"
+	<string.h>
+	<ctype.h>
+

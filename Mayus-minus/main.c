@@ -12,7 +12,12 @@ int main()
     scanf("%[^\n]",cadena);
 
     pasarMayuscula(cadena);
+
     puts(cadena);
+
+    pasarMinuscula(cadena);
+    puts(cadena);
+
 
     return 0;
 }

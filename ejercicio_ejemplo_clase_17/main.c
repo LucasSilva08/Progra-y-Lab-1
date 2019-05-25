@@ -27,7 +27,7 @@
  */
 char* getDynamicString(char* msg)
 {
-    printf(msg);
+    printf("%s",msg);
 
     char* pData = (char*)malloc(sizeof(char)*1024);
 

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #define T 5
 
-int main()
+/*int main()
 {
     int* pNumero;
     int* pAuxiliar;
@@ -38,8 +38,8 @@ int main()
 
 
     return 0;
-}
-/*int main()
+}*/
+int main()
 {
     int* pNumero;
 
@@ -50,7 +50,7 @@ int main()
     if(pNumero!=NULL)
     {
         printf("VALOR--pNumero: %d\n",*pNumero);//valor del espacio reservado en el heap apuntado por el puntero
-        system("pause");
+        //system("pause");
         printf("Luego de hacer el free\n");
         free(pNumero);//libera la referencia del espacio
         printf("HEAP--pNumero: %p\n",pNumero);
@@ -60,4 +60,4 @@ int main()
     }
 
     return 0;
-}*/
+}
