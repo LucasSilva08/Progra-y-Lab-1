@@ -19,13 +19,13 @@ int main ()
     FILE* miArchivo;
     char nombre[20];
     miArchivo=fopen("D:\\misDatos.txt","r");// abro el archivo en modo lectura
-    while(!feof(miArchivo))
+    while (!feof(miArchivo))
     {
-        fgets(nombre,30,miArchivo);
+        fgets(nombre,20,miArchivo);
         printf("%s",nombre);
     }
     /*fgets(nombre,30,miArchivo);// lee una linea del archivo
-    fgets(nombre,30,miArchivo);*/
+    fgets(nombre,30,miArchivo);//pisa la anterior y lee la segunda linea*/
     fclose(miArchivo);//cierro el archivo
     //printf("%s",nombre);
     return 0;
