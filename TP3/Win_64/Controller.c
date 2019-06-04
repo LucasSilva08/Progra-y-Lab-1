@@ -95,6 +95,76 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_editEmployee(LinkedList* pArrayListEmployee)
 {
+
+    char auxNombre[128];
+    int auxHrs;
+    int auxSueldo;
+    char confirmar;
+    int id;
+    int index;
+    int opcion;
+    Employee* pEmployee;
+    id=getInt("Ingrese Nro de ID: ");
+    index=findOneById(pArrayListEmployee,id);
+    if(index!=-1)
+    {
+        pEmployee=ll_get(pArrayListEmployee,index);
+         do
+        {
+        opcion = getInt("1.Nombre\n2.Horas Trabajadas\n3.Sueldo\n4.Salir\nElija una opcion a modificar: ");
+        switch(opcion)
+        {
+            case 1:
+                confirmar=getChar("Estas seguro que desea modificar el Nombre? (s/n): ");
+                if(confirmar=='s'||confirmar=='S')
+                {
+                    getString("Ingrese Nuevo Nombre: ",auxNombre);
+                    confirmar=getChar("Estas seguro que desea modificar el Nombre? (s/n): ");
+                    if(confirmar=='s'||confirmar=='S')
+                    {
+                       strcpy(pEmployee->nombre,auxNombre);
+                    }
+                    else
+                    {
+                         break;
+                    }
+                }
+            break;
+            case 2:
+                confirmar=getChar("Estas seguro que desea modificar las Hras Trabajadas? (s/n): ");
+                if (confirmar=='s'||confirmar=='S')
+                {
+                    auxHrs=getInt("Ingrese Nueva Hras trabajadas: ");
+                    confirmar=getChar("Estas seguro que desea modificar las Hras Trabajadas ? (s/n): ");
+                    if (confirmar=='s'||confirmar=='S')
+                    {
+                        pEmployee->horasTrabajadas=auxHrs;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                confirmar=getChar("Estas seguro que desea modificar el SUELDO? (s/n): ");
+                if (confirmar=='s'||confirmar=='S')
+                {
+                    auxSueldo=getInt("Ingrese Nuevo Sueldo: ");
+                    confirmar=getChar("Estas seguro que desea modificar el SUELDO? (s/n): ");
+                    if (confirmar=='s'||confirmar=='S')
+                    {
+                        pEmployee->sueldo=auxSueldo;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                break;
+        }
+        }while(opcion!=4);
+    }
     return 1;
 }
 

@@ -53,7 +53,7 @@ int main()
                 controller_addEmployee(listaEmpleados);
                 break;
             case 4:
-                printf("Estoy en el 4\n");
+                controller_editEmployee(listaEmpleados);
                 break;
             case 5:
                 controller_removeEmployee(listaEmpleados);
@@ -62,8 +62,8 @@ int main()
                 controller_ListEmployee(listaEmpleados);
                 break;
             case 7:
-                printf("Estoy en el 7\n");
-                ll_sort(listaEmpleados,employee_CompareByName,1);
+
+                ll_sort(listaEmpleados,employee_CompareById,1);
                 break;
             case 8:
                 printf("Estoy en el 8\n");

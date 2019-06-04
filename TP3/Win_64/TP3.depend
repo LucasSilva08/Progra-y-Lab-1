@@ -99,3 +99,49 @@
 	<time.h>
 	<string.h>
 
+1559605583 source:c:\users\los fierros\desktop\tp3\win_64\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+	"Controller.h"
+	"utn.h"
+
+1559559696 c:\users\los fierros\desktop\tp3\win_64\linkedlist.h
+
+1559606307 c:\users\los fierros\desktop\tp3\win_64\employee.h
+
+1559559696 c:\users\los fierros\desktop\tp3\win_64\parser.h
+
+1559559696 c:\users\los fierros\desktop\tp3\win_64\controller.h
+
+1559559696 c:\users\los fierros\desktop\tp3\win_64\utn.h
+
+1559606307 source:c:\users\los fierros\desktop\tp3\win_64\employee.c
+	"Employee.h"
+	<string.h>
+	<stdlib.h>
+
+1559559696 source:c:\users\los fierros\desktop\tp3\win_64\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1559559696 source:c:\users\los fierros\desktop\tp3\win_64\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
+1559606543 source:c:\users\los fierros\desktop\tp3\win_64\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"utn.h"
+

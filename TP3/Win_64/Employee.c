@@ -2,8 +2,14 @@
 #include <string.h>
 #include <stdlib.h>
 
-int employee_CompareByName(void* empl1,void* empl2)
+int employee_CompareById(void* empl1,void* empl2)
 {
+    int estado=0;
+    if(empl1>empl2)
+    {
+        estado=1;
+    }
+    return estado;
 
 }
 Employee* employee_new()
