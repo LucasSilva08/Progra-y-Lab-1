@@ -27,7 +27,7 @@ int main()
     int option;
     LinkedList* listaEmpleados = ll_newLinkedList();
     do{
-        printf("1. Cargar los datos de los empleados desde el archivo data.csv (modo texto)\n");
+        printf("\n1. Cargar los datos de los empleados desde el archivo data.csv (modo texto)\n");
         printf("2. Cargar los datos de los empleados desde el archivo data.csv (modo binario)\n");
         printf("3. Alta de empleado\n");
         printf("4. Modificar datos de empleado\n");
@@ -54,23 +54,25 @@ int main()
                 controller_addEmployee(listaEmpleados);
                 break;
             case 4:
-                controller_editEmployee(listaEmpleados);
+                if(!controller_editEmployee(listaEmpleados))
+                    printf("\nNO SE ENCONTRO EL ID INGRESADO\n\n");
                 break;
             case 5:
-                controller_removeEmployee(listaEmpleados);
+                if(!controller_removeEmployee(listaEmpleados))
+                   printf("\nNO SE ENCONTRO EL ID INGRESADO\n\n");
                 break;
             case 6:
                 controller_ListEmployee(listaEmpleados);
                 break;
             case 7:
 
-                ll_sort(listaEmpleados,employee_CompareById,1);
+                ll_sort(listaEmpleados,employee_CompareById,0);
                 break;
             case 8:
                 controller_saveAsText("data.csv",listaEmpleados);
                 break;
             case 9:
-                printf("Estoy en el 9\n");
+                controller_saveAsBinary("data.csv",listaEmpleados);
                 break;
 
         }

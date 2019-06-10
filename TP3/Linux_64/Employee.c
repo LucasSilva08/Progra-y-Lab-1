@@ -5,7 +5,22 @@
 int employee_CompareById(void* empl1,void* empl2)
 {
     int estado=0;
-    Employee* pEmpleado;
+    Employee* Employee1;
+    Employee* Employee2;
+    Employee1=(Employee*)empl1;
+    Employee2=(Employee*)empl2;
+    if(Employee1!=NULL && Employee2!=NULL)
+    {
+        if(Employee1->id > Employee2->id)
+        {
+            estado=1;
+        }
+        else if(Employee1->id < Employee2->id)
+        {
+            estado=-1;
+        }
+
+    }
 
     return estado;
 

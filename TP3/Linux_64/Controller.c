@@ -105,7 +105,7 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_editEmployee(LinkedList* pArrayListEmployee)
 {
-
+    int retorno=0;
     char auxNombre[128];
     int auxHrs;
     int auxSueldo;
@@ -121,7 +121,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
         pEmployee=ll_get(pArrayListEmployee,index);
          do
         {
-        opcion = getInt("1.Nombre\n2.Horas Trabajadas\n3.Sueldo\n4.Salir\nElija una opcion a modificar: ");
+        opcion = getInt("\n1.Nombre\n2.Horas Trabajadas\n3.Sueldo\n4.Salir\nElija una opcion a modificar: ");
         switch(opcion)
         {
             case 1:
@@ -174,8 +174,9 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
                 break;
         }
         }while(opcion!=4);
+        retorno=1;
     }
-    return 1;
+    return retorno;
 }
 
 /** \brief Baja de empleado
@@ -187,6 +188,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_removeEmployee(LinkedList* pArrayListEmployee)
 {
+    int retorno=0;
     int id;
     int index;
     id=getSoloNumero("Ingrese Nro de ID: ");
@@ -194,9 +196,10 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
     if(index!=-1)
     {
         ll_remove(pArrayListEmployee,index);
+        retorno=1;
     }
 
-    return 1;
+    return retorno;
 }
 
 /** \brief Listar empleados
@@ -233,7 +236,7 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
                  system("pause");
              }*/
              printf("%5d |    %15s    |    %5dHs        |  $%5d\n",auxId,auxNombre,auxHrs,auxSueldo);
-             //printf("%d%s%d%d\n",auxId,auxNombre,auxHrs,auxSueldo);
+
         }
 
     }
@@ -280,7 +283,9 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
             fprintf(pFile,"%d,%s,%d,%d\n",pEmployee->id,pEmployee->nombre,pEmployee->horasTrabajadas,pEmployee->sueldo);
         }
         fclose(pFile);
+
     }
+
     return 1;
 }
 
@@ -293,6 +298,20 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
  */
 int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee)
 {
+    int i;
+    FILE* pFile;
+    Employee* pEmployee;
+    pFile=fopen(path,"wb");
+    if(pFile!=NULL)
+    {
+        for(i=0;i<ll_len(pArrayListEmployee);i++)
+        {
+            pEmployee=ll_get(pArrayListEmployee,i);
+            fwrite(pEmployee,sizeof(Employee),1,pFile);
+        }
+        fclose(pFile);
+    }
+
     return 1;
 }
 int findOneById(LinkedList* pArrayListEmployee,int id)
