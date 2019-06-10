@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "LinkedList.h"
 #include "Employee.h"
+#include "parser.h"
+#include "Controller.h"
+#include "utn.h"
 
 
 /** \brief Carga los datos de los empleados desde el archivo data.csv (modo texto).
@@ -13,7 +17,17 @@
  */
 int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
 {
-    return 1;
+    int estado=0;
+    FILE* pFile;
+    pFile = fopen(path,"r");
+    if(pFile!=NULL)
+    {
+        parser_EmployeeFromText(pFile,pArrayListEmployee);
+        estado=1;
+    }
+
+    fclose(pFile);
+    return estado;
 }
 
 /** \brief Carga los datos de los empleados desde el archivo data.csv (modo binario).
@@ -25,7 +39,17 @@ int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
  */
 int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
 {
-    return 1;
+    int estado=0;
+    FILE* pFile;
+    pFile = fopen(path,"rb");
+    if(pFile!=NULL)
+    {
+        parser_EmployeeFromBinary(pFile,pArrayListEmployee);
+        estado=1;
+    }
+    fclose(pFile);
+
+    return estado;
 }
 
 /** \brief Alta de empleados
@@ -37,6 +61,38 @@ int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
  */
 int controller_addEmployee(LinkedList* pArrayListEmployee)
 {
+    int id;
+    char nombre[128];
+    int horas;
+    int sueldo;
+    int index;
+
+    Employee* pEmployee;
+    pEmployee=employee_new();
+    if(pEmployee!=NULL)
+    {
+        id=getSoloNumero("Ingrese Nro de ID: ");
+        index=findOneById(pArrayListEmployee,id);
+        if(index==-1)
+        {
+          employee_setId(pEmployee,id);
+          getValidString("Ingrese Nombre: ","ERROR, Tiene que estar compuesto solo por Letras",nombre);
+          employee_setNombre(pEmployee,nombre);
+          horas=getSoloNumero("Ingrese Horas Trabajadas: ");
+          employee_setHorasTrabajadas(pEmployee,horas);
+          sueldo=getSoloNumero("Ingrese Sueldo: ");
+          employee_setSueldo(pEmployee,sueldo);
+
+          ll_add(pArrayListEmployee,pEmployee);
+        }
+        else
+        {
+            printf("\nYA EXISTE UN EMPLEADO CON ESE ID\n\n");
+        }
+
+    }
+
+
     return 1;
 }
 
@@ -49,6 +105,76 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_editEmployee(LinkedList* pArrayListEmployee)
 {
+
+    char auxNombre[128];
+    int auxHrs;
+    int auxSueldo;
+    char confirmar;
+    int id;
+    int index;
+    int opcion;
+    Employee* pEmployee;
+    id=getSoloNumero("Ingrese Nro de ID: ");
+    index=findOneById(pArrayListEmployee,id);
+    if(index!=-1)
+    {
+        pEmployee=ll_get(pArrayListEmployee,index);
+         do
+        {
+        opcion = getInt("1.Nombre\n2.Horas Trabajadas\n3.Sueldo\n4.Salir\nElija una opcion a modificar: ");
+        switch(opcion)
+        {
+            case 1:
+                confirmar=getChar("Estas seguro que desea modificar el Nombre? (s/n): ");
+                if(confirmar=='s'||confirmar=='S')
+                {
+                    getValidString("Ingrese Nombre: ","ERROR, Tiene que estar compuesto solo por Letras",auxNombre);
+                    confirmar=getChar("Estas seguro que desea modificar el Nombre? (s/n): ");
+                    if(confirmar=='s'||confirmar=='S')
+                    {
+                       strcpy(pEmployee->nombre,auxNombre);
+                    }
+                    else
+                    {
+                         break;
+                    }
+                }
+            break;
+            case 2:
+                confirmar=getChar("Estas seguro que desea modificar las Hras Trabajadas? (s/n): ");
+                if (confirmar=='s'||confirmar=='S')
+                {
+                    auxHrs=getSoloNumero("Ingrese Nueva Hras trabajadas: ");
+                    confirmar=getChar("Estas seguro que desea modificar las Hras Trabajadas ? (s/n): ");
+                    if (confirmar=='s'||confirmar=='S')
+                    {
+                        pEmployee->horasTrabajadas=auxHrs;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                confirmar=getChar("Estas seguro que desea modificar el SUELDO? (s/n): ");
+                if (confirmar=='s'||confirmar=='S')
+                {
+                    auxSueldo=getSoloNumero("Ingrese Nuevo Sueldo: ");
+                    confirmar=getChar("Estas seguro que desea modificar el SUELDO? (s/n): ");
+                    if (confirmar=='s'||confirmar=='S')
+                    {
+                        pEmployee->sueldo=auxSueldo;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                break;
+        }
+        }while(opcion!=4);
+    }
     return 1;
 }
 
@@ -61,6 +187,15 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_removeEmployee(LinkedList* pArrayListEmployee)
 {
+    int id;
+    int index;
+    id=getSoloNumero("Ingrese Nro de ID: ");
+    index=findOneById(pArrayListEmployee,id);
+    if(index!=-1)
+    {
+        ll_remove(pArrayListEmployee,index);
+    }
+
     return 1;
 }
 
@@ -73,6 +208,36 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_ListEmployee(LinkedList* pArrayListEmployee)
 {
+    int auxId;
+    char auxNombre[25];
+    int auxHrs;
+    int auxSueldo;
+    Employee* pEmployee;
+    int largoLista;
+    int i;
+    largoLista= ll_len(pArrayListEmployee);
+    printf("   ID |     NOMBRE       |   HS TRABAJADAS |  SUELDO \n");
+
+    for(i=0;i<largoLista;i++)
+    {
+        pEmployee=ll_get(pArrayListEmployee,i);
+
+        if(pEmployee!=NULL)
+        {
+             employee_getId(pEmployee,&auxId);
+             employee_getNombre(pEmployee,auxNombre);
+             employee_getHorasTrabajadas(pEmployee,&auxHrs);
+             employee_getSueldo(pEmployee,&auxSueldo);
+             /*if(i%250==0)
+             {
+                 system("pause");
+             }*/
+             printf("%5d |    %15s    |    %5dHs        |  $%5d\n",auxId,auxNombre,auxHrs,auxSueldo);
+             //printf("%d%s%d%d\n",auxId,auxNombre,auxHrs,auxSueldo);
+        }
+
+    }
+
     return 1;
 }
 
@@ -97,6 +262,25 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
 {
+    char id[50]={"id"};
+    char nombre[50]={"nombre"};
+    char Hras[50]={"horasTrabajadas"};
+    char sueldo[50]={"sueldo"};
+
+    int i;
+    FILE* pFile;
+    Employee* pEmployee;
+    pFile=fopen(path,"w");
+    if(pFile!=NULL)
+    {
+        fprintf(pFile,"%s,%s,%s,%s\n",id,nombre,Hras,sueldo);
+        for(i=0;i<ll_len(pArrayListEmployee);i++)
+        {
+            pEmployee=ll_get(pArrayListEmployee,i);
+            fprintf(pFile,"%d,%s,%d,%d\n",pEmployee->id,pEmployee->nombre,pEmployee->horasTrabajadas,pEmployee->sueldo);
+        }
+        fclose(pFile);
+    }
     return 1;
 }
 
@@ -111,4 +295,19 @@ int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee)
 {
     return 1;
 }
-
+int findOneById(LinkedList* pArrayListEmployee,int id)
+{
+    int i;
+    int index =-1 ;
+    Employee* pEmployee;
+    for(i=0;i<ll_len(pArrayListEmployee);i++)
+    {
+        pEmployee=ll_get(pArrayListEmployee,i);
+        if(pEmployee->id==id)
+        {
+            index=i;
+            break;
+        }
+    }
+    return index;
+}
