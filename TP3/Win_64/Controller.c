@@ -39,7 +39,17 @@ int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
  */
 int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
 {
-    return 1;
+    int estado=0;
+    FILE* pFile;
+    pFile=fopen(path,"rb");
+    if(pFile!=NULL)
+    {
+        parser_EmployeeFromBinary(pFile,pArrayListEmployee);
+        estado=1;
+
+    }
+    fclose(pFile);
+    return estado;
 }
 
 /** \brief Alta de empleados
@@ -239,6 +249,7 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_sortEmployee(LinkedList* pArrayListEmployee)
 {
+
     return 1;
 }
 
@@ -263,6 +274,7 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
  */
 int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee)
 {
+
     return 1;
 }
 int findOneById(LinkedList* pArrayListEmployee,int id)

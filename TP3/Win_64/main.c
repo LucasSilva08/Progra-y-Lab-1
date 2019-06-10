@@ -47,7 +47,8 @@ int main()
                     printf("\nCARAGA EXITOSA\n\n");
                 break;
             case 2:
-                printf("Estoy en el 2\n");
+                if(controller_loadFromBinary("data.csv",listaEmpleados))
+                    printf("\nCARAGA EXITOSA\n\n");
                 break;
             case 3:
                 controller_addEmployee(listaEmpleados);

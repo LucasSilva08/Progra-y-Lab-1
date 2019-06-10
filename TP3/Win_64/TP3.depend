@@ -145,7 +145,7 @@
 	"Employee.h"
 	"utn.h"
 
-1559660740 source:c:\users\alumno\desktop\progra-y-lab-1\tp3\win_64\controller.c
+1560172516 source:c:\users\alumno\desktop\progra-y-lab-1\tp3\win_64\controller.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -155,22 +155,22 @@
 	"Controller.h"
 	"utn.h"
 
-1559660740 c:\users\alumno\desktop\progra-y-lab-1\tp3\win_64\linkedlist.h
+1560167753 c:\users\alumno\desktop\progra-y-lab-1\tp3\win_64\linkedlist.h
 
-1559660740 c:\users\alumno\desktop\progra-y-lab-1\tp3\win_64\employee.h
+1560167753 c:\users\alumno\desktop\progra-y-lab-1\tp3\win_64\employee.h
 
-1559660740 c:\users\alumno\desktop\progra-y-lab-1\tp3\win_64\parser.h
+1560167753 c:\users\alumno\desktop\progra-y-lab-1\tp3\win_64\parser.h
 
-1559660740 c:\users\alumno\desktop\progra-y-lab-1\tp3\win_64\controller.h
+1560167753 c:\users\alumno\desktop\progra-y-lab-1\tp3\win_64\controller.h
 
-1559660740 c:\users\alumno\desktop\progra-y-lab-1\tp3\win_64\utn.h
+1560167753 c:\users\alumno\desktop\progra-y-lab-1\tp3\win_64\utn.h
 
-1559660740 source:c:\users\alumno\desktop\progra-y-lab-1\tp3\win_64\employee.c
+1560172516 source:c:\users\alumno\desktop\progra-y-lab-1\tp3\win_64\employee.c
 	"Employee.h"
 	<string.h>
 	<stdlib.h>
 
-1559660740 source:c:\users\alumno\desktop\progra-y-lab-1\tp3\win_64\main.c
+1560171410 source:c:\users\alumno\desktop\progra-y-lab-1\tp3\win_64\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -179,13 +179,13 @@
 	"Employee.h"
 	"utn.h"
 
-1559660740 source:c:\users\alumno\desktop\progra-y-lab-1\tp3\win_64\parser.c
+1560171039 source:c:\users\alumno\desktop\progra-y-lab-1\tp3\win_64\parser.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
 	"Employee.h"
 
-1559660740 source:c:\users\alumno\desktop\progra-y-lab-1\tp3\win_64\utn.c
+1560167753 source:c:\users\alumno\desktop\progra-y-lab-1\tp3\win_64\utn.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
