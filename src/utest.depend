@@ -4347,13 +4347,13 @@
 	<stdlib.h>
 	<string.h>
 
-1560179242 source:c:\users\alumno\desktop\linkedlist_cascara_v5\src\linkedlist.c
+1560260026 source:c:\users\alumno\desktop\linkedlist_cascara_v5\src\linkedlist.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"../inc/LinkedList.h"
 
-1560178656 source:c:\users\alumno\desktop\linkedlist_cascara_v5\src\main.c
+1560260009 source:c:\users\alumno\desktop\linkedlist_cascara_v5\src\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
