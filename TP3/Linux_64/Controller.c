@@ -253,6 +253,36 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_sortEmployee(LinkedList* pArrayListEmployee)
 {
+    int opcion;
+    do
+    {
+
+        printf("1.ID\n");
+        printf("2.Nombre\n");
+        printf("3.Hrs Trabajadas\n");
+        printf("4.Sueldo\n");
+        printf("5.Salir\n");
+        opcion=getInt("Ingrese Opcion por la Cual desea Ordenar: ");
+        switch(opcion)
+        {
+        case 1:
+            ll_sort(pArrayListEmployee,employee_CompareById,1);
+            break;
+        case 2:
+            ll_sort(pArrayListEmployee,employee_CompareByNombre,0);
+            break;
+        case 3:
+            ll_sort(pArrayListEmployee,employee_CompareByHrsTrabajadas,0);
+            break;
+        case 4:
+            ll_sort(pArrayListEmployee,employee_CompareBySueldo,0);
+            break;
+
+        }
+
+    }while(opcion!=5);
+
+
     return 1;
 }
 
@@ -265,10 +295,10 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
 {
-    char id[50]={"id"};
+    /*char id[50]={"id"};
     char nombre[50]={"nombre"};
     char Hras[50]={"horasTrabajadas"};
-    char sueldo[50]={"sueldo"};
+    char sueldo[50]={"sueldo"};*/
 
     int i;
     FILE* pFile;
@@ -276,7 +306,7 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
     pFile=fopen(path,"w");
     if(pFile!=NULL)
     {
-        fprintf(pFile,"%s,%s,%s,%s\n",id,nombre,Hras,sueldo);
+        fprintf(pFile,"id,nombre,horasTrabajadas,sueldo\n");
         for(i=0;i<ll_len(pArrayListEmployee);i++)
         {
             pEmployee=ll_get(pArrayListEmployee,i);
@@ -301,14 +331,21 @@ int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee)
     int i;
     FILE* pFile;
     Employee* pEmployee;
+    int cantidad;
     pFile=fopen(path,"wb");
     if(pFile!=NULL)
     {
         for(i=0;i<ll_len(pArrayListEmployee);i++)
         {
             pEmployee=ll_get(pArrayListEmployee,i);
-            fwrite(pEmployee,sizeof(Employee),1,pFile);
+            cantidad=fwrite(pEmployee,sizeof(Employee),1,pFile);
         }
+        if(cantidad!=1)
+        {
+             printf("\nError al Guardar los datos\n");
+        }
+
+
         fclose(pFile);
     }
 

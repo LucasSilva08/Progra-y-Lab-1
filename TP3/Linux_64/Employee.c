@@ -7,21 +7,77 @@ int employee_CompareById(void* empl1,void* empl2)
     int estado=0;
     Employee* Employee1;
     Employee* Employee2;
-    Employee1=(Employee*)empl1;
-    Employee2=(Employee*)empl2;
-    if(Employee1!=NULL && Employee2!=NULL)
+
+
+    if(empl1!=NULL && empl2!=NULL)
     {
-        if(Employee1->id > Employee2->id)
+        Employee1=(Employee*)empl1;
+        Employee2=(Employee*)empl2;
+
+        if((Employee1->id)>(Employee2->id))
         {
             estado=1;
-        }
-        else if(Employee1->id < Employee2->id)
-        {
-            estado=-1;
         }
 
     }
 
+    return estado;
+
+}
+int employee_CompareByHrsTrabajadas(void* empl1,void* empl2)
+{
+    int estado=0;
+    Employee* Employee1;
+    Employee* Employee2;
+
+    if(empl1!=NULL && empl2!=NULL)
+    {
+        Employee1=(Employee*)empl1;
+        Employee2=(Employee*)empl2;
+
+        if(Employee1->horasTrabajadas<Employee2->horasTrabajadas)
+        {
+            estado=1;
+        }
+
+    }
+
+    return estado;
+
+}
+int employee_CompareBySueldo(void* empl1,void* empl2)
+{
+    int estado=0;
+    Employee* Employee1;
+    Employee* Employee2;
+
+    if(empl1!=NULL && empl2!=NULL)
+    {
+        Employee1=(Employee*)empl1;
+        Employee2=(Employee*)empl2;
+
+        if(Employee1->sueldo > Employee2->sueldo)
+        {
+            estado=1;
+        }
+
+    }
+
+    return estado;
+
+}
+int employee_CompareByNombre(void* empl1,void* empl2)
+{
+    int estado=-1;
+    Employee* Employee1;
+    Employee* Employee2;
+
+    if(empl1!=NULL && empl2!=NULL)
+    {
+        Employee1=(Employee*)empl1;
+        Employee2=(Employee*)empl2;
+        estado=strcmp(Employee1->nombre,Employee2->nombre);
+    }
     return estado;
 
 }

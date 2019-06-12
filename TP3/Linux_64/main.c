@@ -66,7 +66,8 @@ int main()
                 break;
             case 7:
 
-                ll_sort(listaEmpleados,employee_CompareById,0);
+                //controller_sortEmployee(listaEmpleados);
+                ll_sort(listaEmpleados,employee_CompareById,1);
                 break;
             case 8:
                 controller_saveAsText("data.csv",listaEmpleados);
