@@ -1,0 +1,54 @@
+# depslib dependency file v1.0
+1560529326 source:c:\users\los fierros\desktop\tp3 con tp4\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+	"Controller.h"
+	"utn.h"
+
+1559559696 c:\users\los fierros\desktop\tp3 con tp4\linkedlist.h
+
+1560289380 c:\users\los fierros\desktop\tp3 con tp4\employee.h
+
+1560289380 c:\users\los fierros\desktop\tp3 con tp4\parser.h
+
+1560289380 c:\users\los fierros\desktop\tp3 con tp4\controller.h
+
+1560289380 c:\users\los fierros\desktop\tp3 con tp4\utn.h
+
+1560448999 source:c:\users\los fierros\desktop\tp3 con tp4\employee.c
+	"Employee.h"
+	<string.h>
+	<stdlib.h>
+
+1561053373 source:c:\users\los fierros\desktop\tp3 con tp4\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1561053729 source:c:\users\los fierros\desktop\tp3 con tp4\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"utn.h"
+
+1560289380 source:c:\users\los fierros\desktop\tp3 con tp4\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1560448646 source:c:\users\los fierros\desktop\tp3 con tp4\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
